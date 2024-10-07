@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Todo List</title>
+</head>
+<body class="flex_center flex_column_box">
+  <section class="main_container flex_row_box">
+      <div class="side_menu_container">
+        <ul class="side_menu flex_column_box flex_center">
+          <li>
+            <p>Subject:</p>
+            <input type="text" name="" id="subject_input">
+          </li>
+          <li>
+            <p>Date:</p>
+            <input type="date" name="" id="date_input">
+          </li>
+          <li>
+            <button id="add_btn">Add</button>
+          </li>
+        </ul>
+      </div>
+      <div class="todos_container flex_column_box">
+        <header>
+          <ul class="todos_container_header flex_row_box">
+            <li>Subject</li>
+            <li>Add Date</li>
+            <li>Target Date</li>
+            <li class="flex_row_box flex_center">
+              <!-- <button>Completed</button>
+              <button>Delete</button> -->
+              <img class="reset_all" src="icon/reset_all.png" alt="resetAll">
+            </li>
+          </ul>
+        </header>
+        <section class="todos">
+          <!-- <ul class="todo_item flex_row_box">
+            <li>Subject</li>
+            <li>Add Date</li>
+            <li>Target Date</li>
+            <li class="buttons_container flex_row_box">
+              <button>Completed</button>
+              <button>Delete</button>
+            </li>
+          </ul> -->
+        </section>
+      </div>
+  </section>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
