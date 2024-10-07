@@ -32,6 +32,7 @@ body {
   height: 100vh;
 }
 
+
 .flex_center {
   justify-content: center;
   align-items: center;
@@ -81,7 +82,7 @@ li {
 }
 
 .side_menu {
-  gap: 30px;
+  gap: 10px;
 }
 
 .side_menu p {
@@ -94,6 +95,7 @@ li {
 .side_menu button {
   background-color: var(--second_color);
   padding: 5px 10px;
+  margin-bottom: 5px;
   font-size: 1.3rem;
   width: 225px;
   border-radius: var(--minimum_radius);
@@ -108,7 +110,15 @@ li {
   transform: scale(105%);
 }
 
+.error_text{
+  color: red;
+  font-weight: bold;
+  padding: 5px;
+  visibility: hidden;
+}
+
 .side_menu button {
+  margin-top: 30px;
   padding: 5px 10px;
   font-size: 1.4rem;
   font-weight: 500;
@@ -205,4 +215,8 @@ li {
 
 .buttons_container {
   gap: 15px;
+}
+
+.visible_prop {
+  visibility: visible;
 }

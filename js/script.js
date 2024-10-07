@@ -1,27 +1,27 @@
-let resetAllBtn = document.querySelector('.reset_all')
-resetAllBtn.addEventListener('click',resetAllTodos)
+let subjectInputErrorText = document.querySelector('.error_text')
+let dateInputErrorText = document.querySelector('.date_error')
 let todosContainer = document.querySelector('.todos')
 let subjectInput = document.getElementById('subject_input')
+subjectInput.addEventListener('keyup' , subjectInputChecker)
 let dateInput = document.getElementById('date_input')
 let addBtn = document.getElementById('add_btn')
 addBtn.addEventListener('click',addBtnAction)
+let resetAllBtn = document.querySelector('.reset_all')
+resetAllBtn.addEventListener('click',resetAllTodos)
 
 let subjectCount = localStorage.getItem('count');
 if(subjectCount == null)
 {
   localStorage.setItem('count',0)
 }
-
 function dateDetector()
 {
   let addDate = new Date().toISOString().slice(0, 10);
   return addDate;
 }
-
 let tempStorage = []
 exportToTempStorage();
 existingSubjectsMake();
-
 function existingSubjectsMake()
 {
   for(let i=0 ; i<tempStorage.length ; i++)
@@ -30,7 +30,6 @@ function existingSubjectsMake()
      tempStorage[i].addDate , tempStorage[i].isCompleted)
   }
 }
-
 function exportToTempStorage()
 {
   let testStorage = []
@@ -43,7 +42,6 @@ function exportToTempStorage()
     }
   }
 }
-
 function importToLocalStorage()
 {
   subjectCount = localStorage.getItem('count');
@@ -52,22 +50,21 @@ function importToLocalStorage()
      addDate:tempStorage[count].addDate , targetDate:tempStorage[count]. targetDate
      , isCompleted:tempStorage[count].isCompleted}))
 }
-
 function addBtnAction()
 {
-  let addDate = dateDetector()
+  subjectInputChecker();
+  let addDate = dateDetector();
   if(subjectInput.value != '' && dateInput.value != '')
   {
     tempStorage.push({id: subjectCount , subject: subjectInput.value, addDate:addDate , targetDate:dateInput.value , isCompleted:false})
-    importToLocalStorage()
+    importToLocalStorage();
     subjectCreator(subjectCount,subjectInput.value , dateInput.value , addDate);
     subjectInput.value='';
     dateInput.value='';
     subjectCount++;
-    localStorage.setItem('count',subjectCount)
+    localStorage.setItem('count',subjectCount);
   }
 }
-
 function subjectCreator(id,subject,targetDate,addDate,isCompleted)
 {
   let ul = document.createElement('ul');
@@ -99,7 +96,6 @@ function subjectCreator(id,subject,targetDate,addDate,isCompleted)
   ul.append(li1,li2,li3,li4);
   todosContainer.append(ul);
 }
-
 function subjectCompleteAction(event)
 {
   let subjectContainer = event.target.parentElement.parentElement;
@@ -116,7 +112,6 @@ function subjectCompleteAction(event)
   })
 
 }
-
 function subjectDeleteAction(event)
 {
   let subjectContainer = event.target.parentElement.parentElement;
@@ -126,9 +121,26 @@ function subjectDeleteAction(event)
   subjectContainer.remove();
 
 }
-
-
 function resetAllTodos(){
   localStorage.clear();
   location.reload();
+}
+
+function subjectInputChecker(){
+  if(subjectInput.value.length < 4)
+  {
+    subjectInputErrorText.classList.add('visible_prop');
+  }
+  else
+  {
+    subjectInputErrorText.classList.remove('visible_prop');
+  }
+  // if(dateInput.value.length < 10)
+  // {
+  //   dateInputErrorText.classList.add('visible_prop');
+  // }
+  // else
+  // {
+  //   dateInputErrorText.classList.remove('visible_prop');
+  // }
 }
