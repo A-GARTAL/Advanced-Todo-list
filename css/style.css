@@ -1,10 +1,10 @@
 :root {
-  --first_color:#212121;
-  --first_color_50:rgba(33, 33, 33, 0.5);
-  --first_color_25:rgba(33, 33, 33, 0.25);
-  --second_color:#FAFAFA;
-  --second_color_50:rgb(250, 250, 250 , 0.5);
-  --second_color_25:rgb(250, 250, 250 , 0.25);
+  --first_color: #212121;
+  --first_color_50: rgba(33, 33, 33, 0.5);
+  --first_color_25: rgba(33, 33, 33, 0.25);
+  --second_color: #fafafa;
+  --second_color_50: rgb(250, 250, 250, 0.5);
+  --second_color_25: rgb(250, 250, 250, 0.25);
   --none_color: rgba(255, 255, 255, 0);
   --first_radius: 8px;
   --second_radius: 12px;
@@ -12,7 +12,21 @@
 }
 
 body {
-  background-image: linear-gradient(to top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  background-image: linear-gradient(
+    to top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -68,17 +82,16 @@ li {
 
 .side_menu {
   gap: 30px;
-  
 }
 
 .side_menu p {
   font-size: 1.4rem;
-  padding:0 0 6px 0;
+  padding: 0 0 6px 0;
   color: var(--second_color);
 }
 
 .side_menu input,
-.side_menu button  {
+.side_menu button {
   background-color: var(--second_color);
   padding: 5px 10px;
   font-size: 1.3rem;
@@ -110,8 +123,7 @@ li {
   border-color: var(--second_color);
 }
 
-.todos_container
-{
+.todos_container {
   background-color: var(--first_color_50);
   height: 100%;
   width: 100%;
@@ -120,14 +132,13 @@ li {
   padding: 10px;
 }
 
-.todos_container header{
+.todos_container header {
   width: 100%;
   padding: 0 0 15px 5px;
   border-bottom: 2px solid var(--second_color);
 }
 
-
-.todos_container_header li ,
+.todos_container_header li,
 .todo_item li {
   font-size: 1.5rem;
   color: var(--second_color);
@@ -162,7 +173,7 @@ li {
 }
 
 @keyframes whirl {
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -187,7 +198,7 @@ li {
   box-shadow: 2px 2px 4px 0 var(--first_color_50);
 }
 
-.todo_item button:nth-child(1){
+.todo_item button:nth-child(1) {
   background-color: green;
   padding-bottom: 5px;
 }
